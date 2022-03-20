@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script>
+
+        // login
+        function login() {
+            let name = document.querySelector('#name').value;
+            let pass = document.querySelector('#pass').value;
+            let check = document.querySelector('#check').getAttribute('checked');
+
+            if (name == '' && pass == '') {
+                alert("ادخل اسم المستخدم")
+            }
+            else {
+
+
+                let x = new Date();
+                alert("مرحبا بكم: " + name + ' الوقت الان ' + x);
+            }
+        }
+
+        // buttons
+        function changeColorRed() {
+            document.body.style.background = 'red';
+        }
+
+        function changeColorBlue() {
+            document.body.style.background = 'blue';
+        }
+
+        function changeColorGreen() {
+            document.body.style.background = 'green';
+        }
+
+        // input color
+        function changColorDy() {
+            let color = document.getElementById('color').value;
+            document.body.style.background = color;
+
+        }
+
+        // factorial
+
+        function factorial() {
+            let number = document.getElementById('number').value;
+            let y = 1;
+            let i;
+            for (i = number; i >= 1; i--) {
+                y = y * i
+            }
+            alert(y)
+        }
+
+    </script>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .section {
+            margin :5em 34em
+        }
+        .form {
+            display: inline-grid
+        }
+
+        .form input {
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <section class="section">
+
+
+        <form>
+            <div class="form">
+                <input type="text" placeholder="ادخل اسمك" id="name" class="int">
+                <input type="password" placeholder="ادخل كلمة المرور" id="pass" class="int">
+                <div>
+                    <input type="checkbox" name="" id="check" required><label for="">Eccept</label>
+                </div>
+                <button type="submit" class="log" onclick="login()">تسجيل الدخول</button>
+            </div>
+        </form>
+
+        <br>
+        <br>
+        <br>
+
+        <button onclick="changeColorRed()">Red</button>
+        <button onclick="changeColorBlue()">Blue</button>
+        <button onclick="changeColorGreen()">Green</button>
+
+        <br>
+        <br>
+        <br>
+
+        <label for="">Change Background Color</label>
+        <input type="color" name="" oninput="changColorDy()" id="color">
+
+        <br>
+        <br>
+        <br>
+
+        <label for="">Calculate Factorial</label><br>
+        <input type="number" name="" id="number"><br><br>
+        <button onclick="factorial()">Calculate Factorial</button>
+
+    </section>
+</body>
+
+</html>
